@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0",
+  "cells": [
+    {
+      "type": "cs",
+      "input": "importFiles"
+    },
+    {
+      "type": "cs",
+      "input": "importFiles [ \"/Users/gautam/Downloads/cs-go-competitive-matchmaking-data/mm_master_demos.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "setupParse source_frames: [ \"nfs://Users/gautam/Downloads/cs-go-competitive-matchmaking-data/mm_master_demos.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "parseFiles\n  source_frames: [\"nfs://Users/gautam/Downloads/cs-go-competitive-matchmaking-data/mm_master_demos.csv\"]\n  destination_frame: \"mm_master_demos.hex\"\n  parse_type: \"CSV\"\n  separator: 44\n  number_columns: 33\n  single_quotes: false\n  column_names: [\"\",\"file\",\"map\",\"date\",\"round\",\"tick\",\"seconds\",\"att_team\",\"vic_team\",\"att_side\",\"vic_side\",\"hp_dmg\",\"arm_dmg\",\"is_bomb_planted\",\"bomb_site\",\"hitbox\",\"wp\",\"wp_type\",\"award\",\"winner_team\",\"winner_side\",\"att_id\",\"att_rank\",\"vic_id\",\"vic_rank\",\"att_pos_x\",\"att_pos_y\",\"vic_pos_x\",\"vic_pos_y\",\"round_type\",\"ct_eq_val\",\"t_eq_val\",\"avg_match_rank\"]\n  column_types: [\"Numeric\",\"Enum\",\"Enum\",\"Time\",\"Numeric\",\"Numeric\",\"Numeric\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Numeric\",\"Numeric\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Numeric\",\"Enum\",\"Enum\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Enum\",\"Numeric\",\"Numeric\",\"Numeric\"]\n  delete_on_done: true\n  check_header: 1\n  chunk_size: 17695744"
+    },
+    {
+      "type": "cs",
+      "input": "getFrameSummary \"mm_master_demos.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"glm\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'glm', {\"model_id\":\"glm-4634a7fa-d3f1-445c-9089-201adcedf8d3\",\"training_frame\":\"mm_master_demos.hex\",\"validation_frame\":\"mm_master_demos.hex\",\"nfolds\":\"10\",\"seed\":-1,\"response_column\":\"avg_match_rank\",\"ignored_columns\":[\"C1\",\"file\",\"map\",\"date\",\"att_team\",\"vic_team\",\"att_side\",\"vic_side\",\"is_bomb_planted\",\"bomb_site\",\"hitbox\",\"wp\",\"wp_type\",\"winner_team\",\"winner_side\",\"round_type\"],\"ignore_const_cols\":true,\"family\":\"gaussian\",\"solver\":\"AUTO\",\"alpha\":[],\"lambda\":[],\"lambda_search\":false,\"standardize\":true,\"non_negative\":false,\"obj_reg\":-1,\"fold_assignment\":\"AUTO\",\"score_each_iteration\":false,\"compute_p_values\":false,\"remove_collinear_columns\":false,\"max_iterations\":-1,\"link\":\"family_default\",\"max_runtime_secs\":0,\"custom_metric_func\":\"\",\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false,\"missing_values_handling\":\"MeanImputation\",\"intercept\":true,\"objective_epsilon\":-1,\"beta_epsilon\":0.0001,\"gradient_epsilon\":-1,\"prior\":-1,\"max_active_predictors\":-1,\"interactions\":[]}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"glm-4634a7fa-d3f1-445c-9089-201adcedf8d3\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"drf\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'drf', {\"model_id\":\"drf-075f74d0-e6e3-4c38-83d2-27a1659df84d\",\"training_frame\":\"mm_master_demos.hex\",\"validation_frame\":\"mm_master_demos.hex\",\"nfolds\":\"10\",\"response_column\":\"winner_side\",\"ignored_columns\":[],\"ignore_const_cols\":true,\"ntrees\":50,\"max_depth\":20,\"min_rows\":1,\"nbins\":20,\"seed\":-1,\"mtries\":-1,\"sample_rate\":0.6320000290870667,\"score_each_iteration\":false,\"score_tree_interval\":0,\"fold_assignment\":\"AUTO\",\"balance_classes\":false,\"nbins_top_level\":1024,\"nbins_cats\":1024,\"r2_stopping\":1.7976931348623157e+308,\"stopping_rounds\":0,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0.001,\"max_runtime_secs\":0,\"checkpoint\":\"\",\"col_sample_rate_per_tree\":1,\"min_split_improvement\":0.00001,\"histogram_type\":\"AUTO\",\"categorical_encoding\":\"AUTO\",\"distribution\":\"AUTO\",\"custom_metric_func\":\"\",\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false,\"build_tree_one_node\":false,\"sample_rate_per_class\":[],\"binomial_double_trees\":false,\"col_sample_rate_change_per_level\":1,\"calibrate_model\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"drf-075f74d0-e6e3-4c38-83d2-27a1659df84d\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"gbm\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'gbm', {\"model_id\":\"gbm-d2d24926-5198-4a7d-b1ca-11c3f2d6c7d3\",\"training_frame\":\"mm_master_demos.hex\",\"validation_frame\":\"mm_master_demos.hex\",\"nfolds\":\"10\",\"response_column\":\"winner_side\",\"ignored_columns\":[\"C1\",\"file\",\"date\",\"winner_team\"],\"ignore_const_cols\":true,\"ntrees\":50,\"max_depth\":5,\"min_rows\":10,\"nbins\":20,\"seed\":\"100\",\"learn_rate\":0.1,\"sample_rate\":1,\"col_sample_rate\":1,\"score_each_iteration\":false,\"score_tree_interval\":0,\"fold_assignment\":\"AUTO\",\"balance_classes\":false,\"nbins_top_level\":1024,\"nbins_cats\":1024,\"r2_stopping\":1.7976931348623157e+308,\"stopping_rounds\":0,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0.001,\"max_runtime_secs\":0,\"learn_rate_annealing\":1,\"distribution\":\"AUTO\",\"huber_alpha\":0.9,\"checkpoint\":\"\",\"col_sample_rate_per_tree\":1,\"min_split_improvement\":0.00001,\"histogram_type\":\"AUTO\",\"categorical_encoding\":\"AUTO\",\"custom_metric_func\":\"\",\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false,\"build_tree_one_node\":false,\"sample_rate_per_class\":[],\"col_sample_rate_change_per_level\":1,\"max_abs_leafnode_pred\":1.7976931348623157e+308,\"pred_noise_bandwidth\":0,\"calibrate_model\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"gbm-d2d24926-5198-4a7d-b1ca-11c3f2d6c7d3\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"naivebayes\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'naivebayes', {\"model_id\":\"naivebayes-22c464c8-dccc-45b0-813f-4a0072ac89d1\",\"nfolds\":\"10\",\"training_frame\":\"mm_master_demos.hex\",\"validation_frame\":\"mm_master_demos.hex\",\"response_column\":\"winner_side\",\"ignored_columns\":[\"C1\",\"file\",\"is_bomb_planted\",\"winner_team\"],\"ignore_const_cols\":true,\"laplace\":0,\"min_sdev\":0.001,\"eps_sdev\":0,\"min_prob\":0.001,\"eps_prob\":0,\"compute_metrics\":true,\"fold_assignment\":\"AUTO\",\"score_each_iteration\":false,\"max_runtime_secs\":0,\"seed\":\"100\",\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"naivebayes-22c464c8-dccc-45b0-813f-4a0072ac89d1\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"deeplearning\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'deeplearning', {\"model_id\":\"deeplearning-bfebdcd7-fcac-42df-9f1f-a8e4c3bd1c00\",\"training_frame\":\"mm_master_demos.hex\",\"validation_frame\":\"mm_master_demos.hex\",\"nfolds\":\"10\",\"response_column\":\"winner_side\",\"ignored_columns\":[\"C1\",\"file\",\"date\",\"winner_team\"],\"ignore_const_cols\":true,\"activation\":\"Rectifier\",\"hidden\":[50,50],\"epochs\":10,\"variable_importances\":true,\"fold_assignment\":\"AUTO\",\"score_each_iteration\":false,\"balance_classes\":false,\"checkpoint\":\"\",\"use_all_factor_levels\":true,\"standardize\":true,\"train_samples_per_iteration\":-2,\"adaptive_rate\":true,\"input_dropout_ratio\":0,\"l1\":0,\"l2\":0,\"loss\":\"Automatic\",\"distribution\":\"AUTO\",\"huber_alpha\":0.9,\"score_interval\":5,\"score_training_samples\":10000,\"score_validation_samples\":0,\"score_duty_cycle\":0.1,\"stopping_rounds\":5,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0,\"max_runtime_secs\":0,\"autoencoder\":false,\"categorical_encoding\":\"AUTO\",\"keep_cross_validation_predictions\":true,\"keep_cross_validation_fold_assignment\":false,\"pretrained_autoencoder\":\"\",\"target_ratio_comm_to_comp\":0.05,\"seed\":\"100\",\"rho\":0.99,\"epsilon\":1e-8,\"nesterov_accelerated_gradient\":true,\"max_w2\":3.4028235e+38,\"initial_weight_distribution\":\"UniformAdaptive\",\"classification_stop\":0,\"score_validation_sampling\":\"Uniform\",\"diagnostics\":true,\"fast_mode\":true,\"force_load_balance\":true,\"single_node_mode\":false,\"shuffle_training_data\":false,\"missing_values_handling\":\"MeanImputation\",\"quiet_mode\":false,\"sparse\":false,\"col_major\":false,\"average_activation\":0,\"sparsity_beta\":0,\"max_categorical_features\":2147483647,\"reproducible\":false,\"export_weights_and_biases\":false,\"mini_batch_size\":1,\"elastic_averaging\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"deeplearning-bfebdcd7-fcac-42df-9f1f-a8e4c3bd1c00\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'naivebayes', {\"model_id\":\"naivebayes-22c464c8-dccc-45b0-813f-4a0072ac89d1\",\"nfolds\":\"10\",\"training_frame\":\"mm_master_demos.hex\",\"validation_frame\":\"mm_master_demos.hex\",\"response_column\":\"winner_side\",\"ignored_columns\":[\"C1\",\"file\",\"is_bomb_planted\",\"winner_team\"],\"ignore_const_cols\":true,\"laplace\":0,\"min_sdev\":0.001,\"eps_sdev\":0,\"min_prob\":0.001,\"eps_prob\":0,\"compute_metrics\":true,\"fold_assignment\":\"AUTO\",\"score_each_iteration\":false,\"max_runtime_secs\":0,\"seed\":\"100\",\"keep_cross_validation_predictions\":true,\"keep_cross_validation_fold_assignment\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'gbm', {\"model_id\":\"gbm-d2d24926-5198-4a7d-b1ca-11c3f2d6c7d3\",\"training_frame\":\"mm_master_demos.hex\",\"validation_frame\":\"mm_master_demos.hex\",\"nfolds\":\"10\",\"response_column\":\"winner_side\",\"ignored_columns\":[\"C1\",\"file\",\"date\",\"winner_team\"],\"ignore_const_cols\":true,\"ntrees\":50,\"max_depth\":5,\"min_rows\":10,\"nbins\":20,\"seed\":\"100\",\"learn_rate\":0.1,\"sample_rate\":1,\"col_sample_rate\":1,\"score_each_iteration\":false,\"score_tree_interval\":0,\"fold_assignment\":\"AUTO\",\"balance_classes\":false,\"nbins_top_level\":1024,\"nbins_cats\":1024,\"r2_stopping\":1.7976931348623157e+308,\"stopping_rounds\":0,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0.001,\"max_runtime_secs\":0,\"learn_rate_annealing\":1,\"distribution\":\"AUTO\",\"huber_alpha\":0.9,\"checkpoint\":\"\",\"col_sample_rate_per_tree\":1,\"min_split_improvement\":0.00001,\"histogram_type\":\"AUTO\",\"categorical_encoding\":\"AUTO\",\"custom_metric_func\":\"\",\"keep_cross_validation_predictions\":true,\"keep_cross_validation_fold_assignment\":false,\"build_tree_one_node\":false,\"sample_rate_per_class\":[],\"col_sample_rate_change_per_level\":1,\"max_abs_leafnode_pred\":1.7976931348623157e+308,\"pred_noise_bandwidth\":0,\"calibrate_model\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"stackedensemble\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'stackedensemble', {\"model_id\":\"stackedensemble-98bc62c8-3b44-46dc-bac0-56eba08331bf\",\"training_frame\":\"mm_master_demos.hex\",\"response_column\":\"winner_side\",\"validation_frame\":\"mm_master_demos.hex\",\"base_models\":[\"naivebayes-22c464c8-dccc-45b0-813f-4a0072ac89d1\",\"deeplearning-bfebdcd7-fcac-42df-9f1f-a8e4c3bd1c00\",\"gbm-d2d24926-5198-4a7d-b1ca-11c3f2d6c7d3\"],\"metalearner_algorithm\":\"AUTO\",\"metalearner_nfolds\":\"10\",\"metalearner_params\":\"\",\"seed\":-1,\"keep_levelone_frame\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"stackedensemble-98bc62c8-3b44-46dc-bac0-56eba08331bf\""
+    }
+  ]
+}

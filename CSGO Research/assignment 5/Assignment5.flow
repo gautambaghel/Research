@@ -1,0 +1,153 @@
+{
+  "version": "1.0.0",
+  "cells": [
+    {
+      "type": "cs",
+      "input": "assist"
+    },
+    {
+      "type": "cs",
+      "input": "importFiles"
+    },
+    {
+      "type": "cs",
+      "input": "importFiles [ \"/Users/gautam/Documents/Advances in Data Science/assignment 5/communities_data_cleaned_sel_cols.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "importFiles [ \"/Users/gautam/Documents/Advances in Data Science/assignment 5/communities_data_cleaned.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "importFiles [ \"/Users/gautam/Documents/Advances in Data Science/assignment 5/communities_data.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "setupParse source_frames: [ \"nfs://Users/gautam/Documents/Advances in Data Science/assignment 5/communities_data_cleaned_sel_cols.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "parseFiles\n  source_frames: [\"nfs://Users/gautam/Documents/Advances in Data Science/assignment 5/communities_data_cleaned_sel_cols.csv\"]\n  destination_frame: \"communities_data_cleaned_sel_cols.hex\"\n  parse_type: \"CSV\"\n  separator: 44\n  number_columns: 14\n  single_quotes: false\n  column_names: [\"population numeric\",\"numbUrban numeric\",\"medIncome numeric\",\"medFamInc numeric\",\"NumUnderPov numeric\",\"PctUnemployed numeric\",\"TotalPctDiv numeric\",\"PctSpeakEnglOnly numeric\",\"PctWOFullPlumb numeric\",\"RentMedian numeric\",\"PctBornSameState numeric\",\"LandArea numeric\",\"PolicBudgPerPop numeric\",\"ViolentCrimesPerPop numeric\"]\n  column_types: [\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\"]\n  delete_on_done: true\n  check_header: 1\n  chunk_size: 8097"
+    },
+    {
+      "type": "cs",
+      "input": "setupParse source_frames: [ \"nfs://Users/gautam/Documents/Advances in Data Science/assignment 5/communities_data.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "parseFiles\n  source_frames: [\"nfs://Users/gautam/Documents/Advances in Data Science/assignment 5/communities_data.csv\"]\n  destination_frame: \"communities_data.hex\"\n  parse_type: \"CSV\"\n  separator: 44\n  number_columns: 128\n  single_quotes: false\n  column_names: [\"state numeric\",\"county numeric\",\"community numeric\",\"communityname string\",\"fold numeric\",\"population numeric\",\"householdsize numeric\",\"racepctblack numeric\",\"racePctWhite numeric\",\"racePctAsian numeric\",\"racePctHisp numeric\",\"agePct12t21 numeric\",\"agePct12t29 numeric\",\"agePct16t24 numeric\",\"agePct65up numeric\",\"numbUrban numeric\",\"pctUrban numeric\",\"medIncome numeric\",\"pctWWage numeric\",\"pctWFarmSelf numeric\",\"pctWInvInc numeric\",\"pctWSocSec numeric\",\"pctWPubAsst numeric\",\"pctWRetire numeric\",\"medFamInc numeric\",\"perCapInc numeric\",\"whitePerCap numeric\",\"blackPerCap numeric\",\"indianPerCap numeric\",\"AsianPerCap numeric\",\"OtherPerCap numeric\",\"HispPerCap numeric\",\"NumUnderPov numeric\",\"PctPopUnderPov numeric\",\"PctLess9thGrade numeric\",\"PctNotHSGrad numeric\",\"PctBSorMore numeric\",\"PctUnemployed numeric\",\"PctEmploy numeric\",\"PctEmplManu numeric\",\"PctEmplProfServ numeric\",\"PctOccupManu numeric\",\"PctOccupMgmtProf numeric\",\"MalePctDivorce numeric\",\"MalePctNevMarr numeric\",\"FemalePctDiv numeric\",\"TotalPctDiv numeric\",\"PersPerFam numeric\",\"PctFam2Par numeric\",\"PctKids2Par numeric\",\"PctYoungKids2Par numeric\",\"PctTeen2Par numeric\",\"PctWorkMomYoungKids numeric\",\"PctWorkMom numeric\",\"NumIlleg numeric\",\"PctIlleg numeric\",\"NumImmig numeric\",\"PctImmigRecent numeric\",\"PctImmigRec5 numeric\",\"PctImmigRec8 numeric\",\"PctImmigRec10 numeric\",\"PctRecentImmig numeric\",\"PctRecImmig5 numeric\",\"PctRecImmig8 numeric\",\"PctRecImmig10 numeric\",\"PctSpeakEnglOnly numeric\",\"PctNotSpeakEnglWell numeric\",\"PctLargHouseFam numeric\",\"PctLargHouseOccup numeric\",\"PersPerOccupHous numeric\",\"PersPerOwnOccHous numeric\",\"PersPerRentOccHous numeric\",\"PctPer/Users/gautam/Desktop/communities_data_cleaned.csvsOwnOccup numeric\",\"PctPersDenseHous numeric\",\"PctHousLess3BR numeric\",\"MedNumBR numeric\",\"HousVacant numeric\",\"PctHousOccup numeric\",\"PctHousOwnOcc numeric\",\"PctVacantBoarded numeric\",\"PctVacMore6Mos numeric\",\"MedYrHousBuilt numeric\",\"PctHousNoPhone numeric\",\"PctWOFullPlumb numeric\",\"OwnOccLowQuart numeric\",\"OwnOccMedVal numeric\",\"OwnOccHiQuart numeric\",\"RentLowQ numeric\",\"RentMedian numeric\",\"RentHighQ numeric\",\"MedRent numeric\",\"MedRentPctHousInc numeric\",\"MedOwnCostPctInc numeric\",\"MedOwnCostPctIncNoMtg numeric\",\"NumInShelters numeric\",\"NumStreet numeric\",\"PctForeignBorn numeric\",\"PctBornSameState numeric\",\"PctSameHouse85 numeric\",\"PctSameCity85 numeric\",\"PctSameState85 numeric\",\"LemasSwornFT numeric\",\"LemasSwFTPerPop numeric\",\"LemasSwFTFieldOps numeric\",\"LemasSwFTFieldPerPop numeric\",\"LemasTotalReq numeric\",\"LemasTotReqPerPop numeric\",\"PolicReqPerOffic numeric\",\"PolicPerPop numeric\",\"RacialMatchCommPol numeric\",\"PctPolicWhite numeric\",\"PctPolicBlack numeric\",\"PctPolicHisp numeric\",\"PctPolicAsian numeric\",\"PctPolicMinor numeric\",\"OfficAssgnDrugUnits numeric\",\"NumKindsDrugsSeiz numeric\",\"PolicAveOTWorked numeric\",\"LandArea numeric\",\"PopDens numeric\",\"PctUsePubTrans numeric\",\"PolicCars numeric\",\"PolicOperBudg numeric\",\"LemasPctPolicOnPatr numeric\",\"LemasGangUnitDeploy numeric\",\"LemasPctOfficDrugUn numeric\",\"PolicBudgPerPop numeric\",\"ViolentCrimesPerPop numeric\"]\n  column_types: [\"Numeric\",\"Enum\",\"Enum\",\"Enum\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Numeric\",\"Numeric\",\"Numeric\",\"Enum\",\"Enum\",\"Enum\",\"Enum\",\"Numeric\",\"Enum\",\"Numeric\"]\n  delete_on_done: true\n  check_header: 1\n  chunk_size: 69103"
+    },
+    {
+      "type": "cs",
+      "input": "setupParse source_frames: [ \"nfs://Users/gautam/Documents/Advances in Data Science/assignment 5/communities_data_cleaned.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "parseFiles\n  source_frames: [\"nfs://Users/gautam/Documents/Advances in Data Science/assignment 5/communities_data_cleaned.csv\"]\n  destination_frame: \"communities_data_cleaned.hex\"\n  parse_type: \"CSV\"\n  separator: 44\n  number_columns: 128\n  single_quotes: false\n  column_names: [\"state numeric\",\"county numeric\",\"community numeric\",\"communityname string\",\"fold numeric\",\"population numeric\",\"householdsize numeric\",\"racepctblack numeric\",\"racePctWhite numeric\",\"racePctAsian numeric\",\"racePctHisp numeric\",\"agePct12t21 numeric\",\"agePct12t29 numeric\",\"agePct16t24 numeric\",\"agePct65up numeric\",\"numbUrban numeric\",\"pctUrban numeric\",\"medIncome numeric\",\"pctWWage numeric\",\"pctWFarmSelf numeric\",\"pctWInvInc numeric\",\"pctWSocSec numeric\",\"pctWPubAsst numeric\",\"pctWRetire numeric\",\"medFamInc numeric\",\"perCapInc numeric\",\"whitePerCap numeric\",\"blackPerCap numeric\",\"indianPerCap numeric\",\"AsianPerCap numeric\",\"OtherPerCap numeric\",\"HispPerCap numeric\",\"NumUnderPov numeric\",\"PctPopUnderPov numeric\",\"PctLess9thGrade numeric\",\"PctNotHSGrad numeric\",\"PctBSorMore numeric\",\"PctUnemployed numeric\",\"PctEmploy numeric\",\"PctEmplManu numeric\",\"PctEmplProfServ numeric\",\"PctOccupManu numeric\",\"PctOccupMgmtProf numeric\",\"MalePctDivorce numeric\",\"MalePctNevMarr numeric\",\"FemalePctDiv numeric\",\"TotalPctDiv numeric\",\"PersPerFam numeric\",\"PctFam2Par numeric\",\"PctKids2Par numeric\",\"PctYoungKids2Par numeric\",\"PctTeen2Par numeric\",\"PctWorkMomYoungKids numeric\",\"PctWorkMom numeric\",\"NumIlleg numeric\",\"PctIlleg numeric\",\"NumImmig numeric\",\"PctImmigRecent numeric\",\"PctImmigRec5 numeric\",\"PctImmigRec8 numeric\",\"PctImmigRec10 numeric\",\"PctRecentImmig numeric\",\"PctRecImmig5 numeric\",\"PctRecImmig8 numeric\",\"PctRecImmig10 numeric\",\"PctSpeakEnglOnly numeric\",\"PctNotSpeakEnglWell numeric\",\"PctLargHouseFam numeric\",\"PctLargHouseOccup numeric\",\"PersPerOccupHous numeric\",\"PersPerOwnOccHous numeric\",\"PersPerRentOccHous numeric\",\"PctPersOwnOccup numeric\",\"PctPersDenseHous numeric\",\"PctHousLess3BR numeric\",\"MedNumBR numeric\",\"HousVacant numeric\",\"PctHousOccup numeric\",\"PctHousOwnOcc numeric\",\"PctVacantBoarded numeric\",\"PctVacMore6Mos numeric\",\"MedYrHousBuilt numeric\",\"PctHousNoPhone numeric\",\"PctWOFullPlumb numeric\",\"OwnOccLowQuart numeric\",\"OwnOccMedVal numeric\",\"OwnOccHiQuart numeric\",\"RentLowQ numeric\",\"RentMedian numeric\",\"RentHighQ numeric\",\"MedRent numeric\",\"MedRentPctHousInc numeric\",\"MedOwnCostPctInc numeric\",\"MedOwnCostPctIncNoMtg numeric\",\"NumInShelters numeric\",\"NumStreet numeric\",\"PctForeignBorn numeric\",\"PctBornSameState numeric\",\"PctSameHouse85 numeric\",\"PctSameCity85 numeric\",\"PctSameState85 numeric\",\"LemasSwornFT numeric\",\"LemasSwFTPerPop numeric\",\"LemasSwFTFieldOps numeric\",\"LemasSwFTFieldPerPop numeric\",\"LemasTotalReq numeric\",\"LemasTotReqPerPop numeric\",\"PolicReqPerOffic numeric\",\"PolicPerPop numeric\",\"RacialMatchCommPol numeric\",\"PctPolicWhite numeric\",\"PctPolicBlack numeric\",\"PctPolicHisp numeric\",\"PctPolicAsian numeric\",\"PctPolicMinor numeric\",\"OfficAssgnDrugUnits numeric\",\"NumKindsDrugsSeiz numeric\",\"PolicAveOTWorked numeric\",\"LandArea numeric\",\"PopDens numeric\",\"PctUsePubTrans numeric\",\"PolicCars numeric\",\"PolicOperBudg numeric\",\"LemasPctPolicOnPatr numeric\",\"LemasGangUnitDeploy numeric\",\"LemasPctOfficDrugUn numeric\",\"PolicBudgPerPop numeric\",\"ViolentCrimesPerPop numeric\"]\n  column_types: [\"Numeric\",\"Numeric\",\"Numeric\",\"Enum\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\"]\n  delete_on_done: true\n  check_header: 1\n  chunk_size: 69100"
+    },
+    {
+      "type": "cs",
+      "input": "importFiles [ \"/Users/gautam/Documents/Advances in Data Science/assignment 5/communities_data_cleaned_sel_cols_nb.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "setupParse source_frames: [ \"nfs://Users/gautam/Documents/Advances in Data Science/assignment 5/communities_data_cleaned_sel_cols_nb.csv\" ]"
+    },
+    {
+      "type": "cs",
+      "input": "parseFiles\n  source_frames: [\"nfs://Users/gautam/Documents/Advances in Data Science/assignment 5/communities_data_cleaned_sel_cols_nb.csv\"]\n  destination_frame: \"communities_data_cleaned_sel_cols_nb.hex\"\n  parse_type: \"CSV\"\n  separator: 44\n  number_columns: 14\n  single_quotes: false\n  column_names: [\"population numeric\",\"numbUrban numeric\",\"medIncome numeric\",\"medFamInc numeric\",\"NumUnderPov numeric\",\"PctUnemployed numeric\",\"TotalPctDiv numeric\",\"PctSpeakEnglOnly numeric\",\"PctWOFullPlumb numeric\",\"RentMedian numeric\",\"PctBornSameState numeric\",\"LandArea numeric\",\"PolicBudgPerPop numeric\",\"ViolentCrimesPerPop numeric\"]\n  column_types: [\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Numeric\",\"Enum\"]\n  delete_on_done: true\n  check_header: 1\n  chunk_size: 7619"
+    },
+    {
+      "type": "cs",
+      "input": "getFrameSummary \"communities_data_cleaned_sel_cols_nb.hex\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"naivebayes\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'naivebayes', {\"model_id\":\"naivebayes-44db85b7-b38f-467b-9d94-f06d04f6d475\",\"nfolds\":\"10\",\"training_frame\":\"communities_data_cleaned_sel_cols_nb.hex\",\"validation_frame\":\"communities_data_cleaned_sel_cols_nb.hex\",\"response_column\":\"ViolentCrimesPerPop numeric\",\"ignored_columns\":[],\"ignore_const_cols\":true,\"laplace\":0,\"min_sdev\":0.001,\"eps_sdev\":0,\"min_prob\":0.001,\"eps_prob\":0,\"compute_metrics\":true,\"fold_assignment\":\"AUTO\",\"score_each_iteration\":false,\"max_runtime_secs\":0,\"seed\":-1,\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"naivebayes-44db85b7-b38f-467b-9d94-f06d04f6d475\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"drf\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'drf', {\"model_id\":\"drf-55dbd22c-b95c-44e6-871a-ceb4b7b0b938\",\"training_frame\":\"communities_data_cleaned_sel_cols.hex\",\"validation_frame\":\"communities_data_cleaned_sel_cols.hex\",\"nfolds\":\"10\",\"response_column\":\"ViolentCrimesPerPop numeric\",\"ignored_columns\":[],\"ignore_const_cols\":true,\"ntrees\":50,\"max_depth\":20,\"min_rows\":1,\"nbins\":20,\"seed\":-1,\"mtries\":-1,\"sample_rate\":0.6320000290870667,\"score_each_iteration\":false,\"score_tree_interval\":0,\"fold_assignment\":\"AUTO\",\"nbins_top_level\":1024,\"nbins_cats\":1024,\"r2_stopping\":1.7976931348623157e+308,\"stopping_rounds\":0,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0.001,\"max_runtime_secs\":0,\"checkpoint\":\"\",\"col_sample_rate_per_tree\":1,\"min_split_improvement\":0.00001,\"histogram_type\":\"AUTO\",\"categorical_encoding\":\"AUTO\",\"distribution\":\"AUTO\",\"custom_metric_func\":\"\",\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false,\"build_tree_one_node\":false,\"sample_rate_per_class\":[],\"binomial_double_trees\":false,\"col_sample_rate_change_per_level\":1,\"calibrate_model\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"drf-55dbd22c-b95c-44e6-871a-ceb4b7b0b938\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"glm\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'glm', {\"model_id\":\"glm-6a0402ee-de19-4612-9ec1-57a096bf52d0\",\"training_frame\":\"communities_data_cleaned_sel_cols.hex\",\"validation_frame\":\"communities_data_cleaned_sel_cols.hex\",\"nfolds\":\"10\",\"seed\":-1,\"response_column\":\"ViolentCrimesPerPop numeric\",\"ignored_columns\":[],\"ignore_const_cols\":true,\"family\":\"gaussian\",\"solver\":\"AUTO\",\"alpha\":[],\"lambda\":[],\"lambda_search\":false,\"standardize\":true,\"non_negative\":false,\"obj_reg\":-1,\"fold_assignment\":\"AUTO\",\"score_each_iteration\":false,\"compute_p_values\":false,\"remove_collinear_columns\":false,\"max_iterations\":-1,\"link\":\"family_default\",\"max_runtime_secs\":0,\"custom_metric_func\":\"\",\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false,\"missing_values_handling\":\"MeanImputation\",\"intercept\":true,\"objective_epsilon\":-1,\"beta_epsilon\":0.0001,\"gradient_epsilon\":-1,\"prior\":-1,\"max_active_predictors\":-1,\"interactions\":[]}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"glm-6a0402ee-de19-4612-9ec1-57a096bf52d0\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"gbm\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'gbm', {\"model_id\":\"gbm-abba9fa6-a541-4b6a-8df7-9d3d37f1d36c\",\"training_frame\":\"communities_data_cleaned_sel_cols.hex\",\"validation_frame\":\"communities_data_cleaned_sel_cols.hex\",\"nfolds\":\"10\",\"response_column\":\"ViolentCrimesPerPop numeric\",\"ignored_columns\":[],\"ignore_const_cols\":true,\"ntrees\":50,\"max_depth\":5,\"min_rows\":10,\"nbins\":20,\"seed\":-1,\"learn_rate\":0.1,\"sample_rate\":1,\"col_sample_rate\":1,\"score_each_iteration\":false,\"score_tree_interval\":0,\"fold_assignment\":\"AUTO\",\"nbins_top_level\":1024,\"nbins_cats\":1024,\"r2_stopping\":1.7976931348623157e+308,\"stopping_rounds\":0,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0.001,\"max_runtime_secs\":0,\"learn_rate_annealing\":1,\"distribution\":\"AUTO\",\"huber_alpha\":0.9,\"checkpoint\":\"\",\"col_sample_rate_per_tree\":1,\"min_split_improvement\":0.00001,\"histogram_type\":\"AUTO\",\"categorical_encoding\":\"AUTO\",\"custom_metric_func\":\"\",\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false,\"build_tree_one_node\":false,\"sample_rate_per_class\":[],\"col_sample_rate_change_per_level\":1,\"max_abs_leafnode_pred\":1.7976931348623157e+308,\"pred_noise_bandwidth\":0,\"calibrate_model\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"gbm-abba9fa6-a541-4b6a-8df7-9d3d37f1d36c\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"deeplearning\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'deeplearning', {\"model_id\":\"deeplearning-4b6f49f0-626f-4814-9aae-58c66f725268\",\"training_frame\":\"communities_data_cleaned_sel_cols.hex\",\"validation_frame\":\"communities_data_cleaned_sel_cols.hex\",\"nfolds\":\"10\",\"response_column\":\"ViolentCrimesPerPop numeric\",\"ignored_columns\":[],\"ignore_const_cols\":true,\"activation\":\"Rectifier\",\"hidden\":[200,200],\"epochs\":10,\"variable_importances\":true,\"fold_assignment\":\"AUTO\",\"score_each_iteration\":false,\"checkpoint\":\"\",\"use_all_factor_levels\":true,\"standardize\":true,\"train_samples_per_iteration\":-2,\"adaptive_rate\":true,\"input_dropout_ratio\":0,\"l1\":0,\"l2\":0,\"loss\":\"Automatic\",\"distribution\":\"AUTO\",\"huber_alpha\":0.9,\"score_interval\":5,\"score_training_samples\":10000,\"score_validation_samples\":0,\"score_duty_cycle\":0.1,\"stopping_rounds\":5,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0,\"max_runtime_secs\":0,\"autoencoder\":false,\"categorical_encoding\":\"AUTO\",\"keep_cross_validation_predictions\":false,\"keep_cross_validation_fold_assignment\":false,\"pretrained_autoencoder\":\"\",\"target_ratio_comm_to_comp\":0.05,\"seed\":-1,\"rho\":0.99,\"epsilon\":1e-8,\"nesterov_accelerated_gradient\":true,\"max_w2\":3.4028235e+38,\"initial_weight_distribution\":\"UniformAdaptive\",\"regression_stop\":0.000001,\"diagnostics\":true,\"fast_mode\":true,\"force_load_balance\":true,\"single_node_mode\":false,\"shuffle_training_data\":false,\"missing_values_handling\":\"MeanImputation\",\"quiet_mode\":false,\"sparse\":false,\"col_major\":false,\"average_activation\":0,\"sparsity_beta\":0,\"max_categorical_features\":2147483647,\"reproducible\":false,\"export_weights_and_biases\":false,\"mini_batch_size\":1,\"elastic_averaging\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"deeplearning-4b6f49f0-626f-4814-9aae-58c66f725268\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"drf\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'drf', {\"model_id\":\"drf-323a17a6-42b2-4d88-b8ab-5a66f861a734\",\"training_frame\":\"communities_data_cleaned_sel_cols.hex\",\"validation_frame\":\"communities_data_cleaned_sel_cols.hex\",\"nfolds\":\"5\",\"response_column\":\"ViolentCrimesPerPop numeric\",\"ignored_columns\":[],\"ignore_const_cols\":true,\"ntrees\":50,\"max_depth\":20,\"min_rows\":1,\"nbins\":20,\"seed\":\"10\",\"mtries\":-1,\"sample_rate\":0.6320000290870667,\"score_each_iteration\":false,\"score_tree_interval\":0,\"fold_assignment\":\"AUTO\",\"nbins_top_level\":1024,\"nbins_cats\":1024,\"r2_stopping\":1.7976931348623157e+308,\"stopping_rounds\":0,\"stopping_metric\":\"AUTO\",\"stopping_tolerance\":0.001,\"max_runtime_secs\":0,\"checkpoint\":\"\",\"col_sample_rate_per_tree\":1,\"min_split_improvement\":0.00001,\"histogram_type\":\"AUTO\",\"categorical_encoding\":\"AUTO\",\"distribution\":\"AUTO\",\"custom_metric_func\":\"\",\"keep_cross_validation_predictions\":true,\"keep_cross_validation_fold_assignment\":false,\"build_tree_one_node\":false,\"sample_rate_per_class\":[],\"binomial_double_trees\":false,\"col_sample_rate_change_per_level\":1,\"calibrate_model\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"glm\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'glm', {\"model_id\":\"glm-03dba17f-0b5c-446c-9900-524f3770f8c1\",\"training_frame\":\"communities_data_cleaned_sel_cols.hex\",\"validation_frame\":\"communities_data_cleaned_sel_cols.hex\",\"nfolds\":\"5\",\"seed\":\"10\",\"response_column\":\"ViolentCrimesPerPop numeric\",\"ignored_columns\":[],\"ignore_const_cols\":true,\"family\":\"gaussian\",\"solver\":\"AUTO\",\"alpha\":[],\"lambda\":[],\"lambda_search\":false,\"standardize\":true,\"non_negative\":false,\"obj_reg\":-1,\"fold_assignment\":\"AUTO\",\"score_each_iteration\":false,\"compute_p_values\":false,\"remove_collinear_columns\":false,\"max_iterations\":-1,\"link\":\"family_default\",\"max_runtime_secs\":0,\"custom_metric_func\":\"\",\"keep_cross_validation_predictions\":true,\"keep_cross_validation_fold_assignment\":false,\"missing_values_handling\":\"MeanImputation\",\"intercept\":true,\"objective_epsilon\":-1,\"beta_epsilon\":0.0001,\"gradient_epsilon\":-1,\"prior\":-1,\"max_active_predictors\":-1,\"interactions\":[]}"
+    },
+    {
+      "type": "cs",
+      "input": "buildModel \"stackedensemble\""
+    },
+    {
+      "type": "cs",
+      "input": "buildModel 'stackedensemble', {\"model_id\":\"stackedensemble-e6da476e-b34e-4c06-bc5a-a50df766fe53\",\"training_frame\":\"communities_data_cleaned_sel_cols.hex\",\"response_column\":\"ViolentCrimesPerPop numeric\",\"validation_frame\":\"communities_data_cleaned_sel_cols.hex\",\"base_models\":[\"drf-323a17a6-42b2-4d88-b8ab-5a66f861a734\",\"glm-03dba17f-0b5c-446c-9900-524f3770f8c1\"],\"metalearner_algorithm\":\"AUTO\",\"metalearner_nfolds\":\"5\",\"metalearner_params\":\"\",\"seed\":-1,\"keep_levelone_frame\":false}"
+    },
+    {
+      "type": "cs",
+      "input": "getModel \"stackedensemble-e6da476e-b34e-4c06-bc5a-a50df766fe53\""
+    }
+  ]
+}
