@@ -1,13 +1,14 @@
-
 \documentclass[conference]{IEEEtran}
 
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 
 \begin{document}
 	
-\title{Importance of Cooperative gameplay in Multiplayer online battle arena (MOBA) games}
+\title{CS:GO Win/Loss prediction and feature importance for user retention}
 
 
-\author{\IEEEauthorblockN{Gautam Baghel, Magy Seif El-Nasr}
+\author{\IEEEauthorblockN{Gautam Baghel}
 \IEEEauthorblockA{College of Computer and Information Science\\
 Northeastern University\\
 Boston, Massachusetts 02115\\}
@@ -17,7 +18,8 @@ Boston, Massachusetts 02115\\}
 \maketitle
 
 \begin{abstract}
-Computer game contributes a huge part to modern culture. Among different types of computer games, the multi-player online battle arena games generated an electronic sports community and attracted plentiful audiences. LOL (League of Legends), as one of the leading multi-player online battle arena games, Riot has a big responsibility on analyzing game data and improving game experiences to players. This paper applies classification methods to identify the contribution of teamwork performance and star player performance to winning. Through various methods verification, the results show using teamwork behavior has higher prediction accuracy than using one-star player performance data in a match. In sum, the results with a data set of 534398 team data in 2015 recommend better teamwork contributes more to winning than single star player performance.
+Computer game contributes a huge part to modern culture. Among different types of computer games, the multi-player online battle arena games generated an electronic sports community and attracted plentiful audiences.Counter Strike: GO (CS:GO), as one of the leading multi-player online battle arena games, Valve has a big responsibility on analyzing game data and improving game experiences to players.The objective is to have players stay in servers as long as possible. To achieve this we must employ a better matchmaking system which pitches the player of similar standards. In a regular server the teams are shuffled almost after every game. If the servers detect that the games are too short or the teams are unevenly matched we would need to shuffle the teams appropriately, now this is where the features will be important in deciding which players need to be employed to the other team. On completion of the maps win/loss prediction would be essential in forming the next batch of teams. This paper applies classification methods to identify the features important in winning and losing a match and also tries to predict a player's chances of winning. Through various methods of verification, the results show that features such as equipment value of both teams, rank of the victim, number of rounds and prominent maps such as \texttt{de\_dust2}, \texttt{de\_cache} and mirage are the best features in determining a player's victory.
+
 \end{abstract}
 
 \IEEEpeerreviewmaketitle
@@ -26,11 +28,11 @@ Computer game contributes a huge part to modern culture. Among different types o
 
 \section{Introduction}
 
-In recent years, there is a rise in popularity of MOBA (Multi-Player Online Battle Arena) games. These games are usually composed of several players forming teams and competing against each other in matches. Each match can range from few minutes of play to hours of play. League of Legends alone reportedly has over 100 million monthly active users \cite{Loterina}. Professional players have made careers out of playing professional MOBA games with earnings in the range of two million dollars annually \cite{esports}. Electronic sports (eSports) are becoming an important part of our culture. In this paper, we are interested in (a) understanding how teamwork is established within a team and how that may impact win/loss. Understanding if the team is important rather than just one player which means more engagement to all the team rather than them relying upon one has design and user experience implication, but also perhaps a learning implication. For game designers, it may be environmental elements of the game which contribute to synergy in a game. For producers, it may be involvement of more players and getting them hooked on the game. For players, it gives them an opportunity to refine their skills where it proved to be inadequate.
+In recent years, there is a rise in popularity of MOBA (Multi-Player Online Battle Arena) games. These games are usually composed of several players forming teams and competing against each other in matches. Each match can range from few minutes of play to hours of play. CS:GO alone reportedly has over 100 million monthly active users \cite{Loterina}. Professional players have made careers out of playing professional MOBA games with earnings in the range of two million dollars annually \cite{esports}. Electronic sports (eSports) are becoming an important part of our culture. In this paper, we are interested in (a) understanding what features may impact win/loss. Understanding the win/loss and matchmaking statistics has design and user experience implication, but also perhaps a learning implication. For game designers, it may be environmental elements of the game which contribute to synergy in a game. For producers, it may be involvement of more players and getting them hooked on the game. For players, it gives them an opportunity to refine their skills where it proved to be inadequate.
 
-To achieve this goal, the paper uses a game analytics approach where data from a MOBA game is analyzed through machine learning algorithms. There has been similar work in this area. Looking at several aspects of team composition from player personalities to champion types in the game. Player personalities may vary in different players altogether and the findings are preliminary. Champion type analysis only looks at the composition based on champion specific skills, player effectiveness in using the champion is not evident. Team versus star player analysis gives a better picture of cooperation versus competition in the game.  
+To achieve this goal, the paper uses a game analytics approach where data from a MOBA game is analyzed through machine learning algorithms. There has been similar work in this area. Looking at the weapon and equipments used in the games to figure out different winning strategies employed by the players. Player personalities may vary in different players altogether and the findings are preliminary. Champion type analysis only looks at the composition based on champion specific skills, player effectiveness in using the champion is not evident. Team versus star player analysis gives a better picture of cooperation versus competition in the game.  
 
-In order to tackle this problem, we analyzed 534,398 data of team statistics from MOBA game. We used analyzed the team vs. star player on the team in terms of their contribution to winning/losing. To answer that we turned this into a classification question where we predict win/loss based on team features vs. star-player features. This kind of analysis is the first of its kind to understand the contribution of team members and features influencing win/loss from different team members. The contribution is in the results that we found and it adds to previous work on team level analysis in MOBA game from a different perspective. 
+In order to tackle this problem, we analyzed 534,398 data of team statistics from CS:GO kaggle datasets. We used analyzed all the players in terms of their contribution to winning/losing. To answer that we turned this into a classification question where we predict win/loss based on important features and slightly correlated features. This kind of analysis is the first of its kind to understand the contribution of the features inlvolved like the guns used or the damage done. The contribution is in the results that we found and it adds to previous work on team level analysis in MOBA game from a different perspective. 
 
 This paper is divided into the following section. First, we discuss previous work in more detail outlining the open problems given the work done in MOBA games. Second, we discuss the game we used and the dataset. Third, we discuss the algorithms used and results obtained. We then discuss the results in more detail. We conclude by outlining the contribution and applications of the results.  
 
@@ -53,16 +55,16 @@ the selection of a proper leader as well as a good matching of heroes inside a t
 Effectiveness of Machine Learning algorithms in predicting game outcome by systematic review and compare performance of most frequently used machine learning algorithms for prediction of the match winner from the teams' drafts in DotA 2 computer game \cite{Semenov} deals with algorithms such as Naive Bayes classifier, Logistic Regression and Decision trees to validate consistency in data mining. Using the algorithms this paper comes up with standard performance metrics for players. This paper deals with different algorithms than the ones previously presented.
 
 \section{Game and Data}
-The data set consists of about two million League of Legends (LOL) matches that happened in 2015 summer retrieved using riots API system. The game mode is called 5-vs-5 ranked matches of a solo queue which is extensively played MOBA mode. A typical such match involves ten players who form two teams of five. Each match consists of ten rows with statistics of each player as shown in (Fig. \ref{fig_sim}). Star player and team data set are segregated which will consist of two rows per match. In the Star player data set, a player who falls under the category of the star player will be placed on each team and in the team data set aggregate of all the player from each team will make two rows per match.
+The data-set within the 1400 matches provides every successful entry of duels (or battle) that took place for a player. That is, each row documents an event when a player is hurt by another player (or World e.g fall damage). There are over 900,000 entries within more than 31500 rounds retrieved using valves API system. The game mode is called 5-vs-5 ranked matches of a solo queue which is extensively played casual or pro mode. A typical such match involves ten players who form two teams of five. The fields in the data-sets highlights include shooters and victims, event coordinates, and time stamps. The data-sets also includes static information on the match winner, player ranks before and after the match, and other miscellaneous match-level meta-data. as shown in (Fig. \ref{fig_sim}).
 
 
 \begin{figure}[!t]
 %\centering
-\includegraphics[width=\linewidth]{tab6}
+\includegraphics[width=\linewidth]{tab1.png}
 % where an .eps filename suffix will be assumed under latex, 
 % and a .pdf suffix will be assumed for pdflatex; or what has been declared
 % via \DeclareGraphicsExtensions.
-\caption{Dataset with retrieved from riot's API}
+\caption{Dataset with retrieved from valve's API}
 \label{fig_sim}
 \end{figure}
 
@@ -70,59 +72,62 @@ The data set consists of about two million League of Legends (LOL) matches that 
 \section{Feature Extraction}
 We derived several features from the given data above: 
 \begin{itemize}
-  \item \textbf{Star Player}  Using backward feature selection which includes all the predictors and recursively removes the predictors which are less influential, goldEarned was the most important predictor with Akaike information criterion that overrules other predictors. The findings here were corroborated in the heat map of the predictors show that gold earned supersedes every other predictor by huge margins \cite{Patterson}. 
-  \item \textbf{Team features}  A similar approach is made as with the star player analysis. Using backward feature selection on assist components of the game which reduces to totalDamageDealt, firstTowerAssist, firstBloodAssist, assists, and firstInhibitorAssist. 
+  \item \textbf{Important Players}  Using backward feature selection which includes all the predictors and recursively removes the predictors which are less influential, \texttt{ct\_eq\_val} was the most important predictor with Akaike information criterion that overrules other predictors. The findings here were corroborated in the heat map of the predictors show that \texttt{ct\_eq\_val}supersedes every other predictor by considerable margins \cite{Patterson}. 
+  \item \textbf{Correlation Matrix} A correlation matrix gives us a better analysis of the correlated features which need to be exempted from our analysis as it may have adverse effect on the models. The target variable winning side turned out to be highly correlated to winning team which subsided the other features.
 \end{itemize}
 
-\section{Team Features vs. Star Player affecting Win/Loss in Moba Game}
+\section{ Win/Loss and feature importance in CS:GO }
 
 
-We considered and compared several methods to predict the effect of team vs. star player as features for predicting win/loss. 
-After the separation of data set into two distinctive halves, we tried to form a learning model based on the features. The datasets comprised of categorical and quantitative data so every algorithm used had its pros and cons. When choosing reasonable methods, some dimensions are considered. For example, the number of training examples, the feature space dimensionality, the relationship between features, the linearly dependent expiations between features and target variable (winner), the problem of overfitting and the computer system’s capacity on running data analysis. Based on the dimensions we considered, these five models were chosen.
+We considered and compared several methods to understand the features for predicting win/loss. 
+After the separation of data set into two distinctive halves, we tried to form a learning model based on the features. The datasets comprised of categorical and quantitative data so every algorithm used had its pros and cons. When choosing reasonable methods, some dimensions are considered. For example, the number of training examples, the feature space dimensions, the relationship between features, the linearly dependent expiation between features and target variable \texttt{winner\_side}, the problem of over-fitting and the computer system’s capacity on running data analysis. Based on the dimensions we considered, these six models were chosen.
 
 \begin{itemize}
-  \item \textbf{Logistic Regression}
-We chose this method due to we expect the LOL data features are roughly linear and the hypothesis problem to be linearly separable. This method is also efficient. Also, since LR output can be interpreted as a probability, it is good for predicting winning or losing. 
+  \item \textbf{Generalized Linear Model}
+We chose this method due to we expect the CS:GO data features are roughly linear and the hypothesis problem to be linearly separable. This method is also efficient. 
 
-  \item \textbf{Linear Discriminant Analysis }
-Also known as Fisher Linear Discriminant (FLD), is a classical algorithm for pattern recognition. It is an effective feature extraction method. Using this method, the inter-class scatter matrix of the post-projection pattern samples can be maximized, and the intra-class scatter matrix is minimized. In other words, it can guarantee the smallest-in-class distance and the largest inter-class distance in the new space, that is, the pattern can be best separated in that space. However, LDA is not effective when sample information is dependent on variance rather than mean.
+In statistics, the generalized linear model (GLM) is a flexible generalization of ordinary linear regression that allows for response variables that have error distribution models other than a normal distribution. The GLM generalizes linear regression by allowing the linear model to be related to the response variable via a link function and by allowing the magnitude of the variance of each measurement to be a function of its predicted value. 
 
-  \item \textbf{Quadratic Discriminant Analysis }
-LDA requires an assumption of equal variance-covariance matrices between the input variables of the classes. QDA is a modification of LDA which allows for the above heterogeneity of classes' covariance matrices. Since in our team dataset we can't be sure whether the covariance of each of the classes is identical or not it is a good idea to use QDA as well. And it can be used to build the model for more problems. The difference is, when the covariance matrices of different categorical samples are the same, LDA should be chosen. Otherwise, QDA should be used. The reason we use both LDA and QDA is to test which method works better on our problem.
+Also, since LR output can be interpreted as a probability, it proved to be good fit for the data. 
 
-  \item \textbf{Regression Tree}
-A Decision Tree (DT) is a graph that uses a branching method to illustrate every possible outcome of a decision. Generally, DT is easier to understand and be explained to most people. Since DT is nonparametric, no worry is needed about whether the data and the outliers are linearly separable. DT’s main drawback is that it is easy to over-fit, which makes the random forest (Random Forest, RF) (or Boosted tree) and other integrated learning algorithm arise. The R package we use is rpart. It solves the over-fitting problem through prune method. It firstly builds a complicated tree model and then estimates the error of each model under different” pruning” conditions according to the Cross-Validation method. This model may prove better as our dataset may contain lots of outliers especially when we analyze the star player. Also, it is useful for our data to be explained in a straightforward way.
+  \item \textbf{Distributed Random Forest}
+Distributed Random Forest (DRF) is a powerful classification and regression tool. When given a set of data, DRF generates a forest of classification or regression trees, rather than a single classification or regression tree. Each of these trees is a weak learner built on a subset of rows and columns. More trees will reduce the variance. Both classification and regression take the average prediction over all of their trees to make a final prediction, whether predicting for a class or numeric value. (Note: For a categorical response column, DRF maps factors (e.g. ‘dog’, ‘cat’, ‘mouse) in lexicographic order to a name lookup array with integer indices (e.g. ‘cat’ - 0, ‘dog’ - 1, ‘mouse’ - 2.) 
 
-  \item \textbf{Clustering}
-Another approach is based on unsupervised learning which is different from all the models used above.In clustering we do not train the data set to predict winning, we simply form groups of players with similar characteristics in terms of being a star player or team player. We’ll use our initial training set without segregating it into teams and star players. K-means is a clustering algorithm which tries to form initial cluster centroids and proceeds by repeating cluster assignments and updating centroids. These steps are performed until the algorithm converges. Using the k-means clustering method we’ll append each player a cluster number to which they belong. 
-So the dataset currently looks like in Fig. 3.
+  \item \textbf{Gradient Boosting Machine}
+Gradient Boosting Machine (for Regression and Classification) is a forward learning ensemble method. The guiding heuristic is that good predictive results can be obtained through increasingly refined approximations. GBM sequentially builds regression trees on all the features of the dataset in a fully distributed way - each tree is built in parallel.
 
+  \item \textbf{Naive Bayes}
+Naïve Bayes is a classification algorithm that relies on strong assumptions of the independence of covariates in applying Bayes Theorem. The Naïve Bayes classifier assumes independence between predictor variables conditional on the response, and a Gaussian distribution of numeric predictors with mean and standard deviation computed from the training dataset.
 
- K-means starts with a random choice of cluster centers and needs the number of clusters to be specified we have to plot and see the number of clusters appropriate for the analysis.
+Naïve Bayes models are commonly used as an alternative to decision trees for classification problems. When building a Naïve Bayes classifier, every row in the training dataset that contains at least one NA will be skipped completely. If the test dataset has missing values, then those predictors are omitted in the probability calculation during prediction.
 
-\begin{figure}[!t]
-%\centering
-\includegraphics[width=\linewidth]{tab4}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-\caption{K-means clustering options}
-%\label{fig_sim}
-\end{figure}
+  \item \textbf{Deep Learning}
+  Deep Learning is based on a multi-layer feedforward artificial neural network that is trained with stochastic gradient descent using back-propagation. The network can contain a large number of hidden layers consisting of neurons with tanh, rectifier, and maxout activation functions. Advanced features such as adaptive learning rate, rate annealing, momentum training, dropout, L1 or L2 regularization, check pointing, and grid search enable high predictive accuracy. Each compute node trains a copy of the global model parameters on its local data with multi-threading (asynchronously) and contributes periodically to the global model via model averaging across the network.
 
- From the Fig. 4, five seems to be a good enough cluster choice. At this point, every player in the game will be in a cluster between 1 and 5. For the team analysis now every team will have a score between 5 and 25 by doing the cluster number aggregation. From this number we’ll predict the winner. As the predictors are in higher dimension we’ll use PCA to visualize the data point and which classification method to use. PCA involves all the predictors which constitute to a cooperative gameplay like assists,totalDamageDealt,firstTowerAssist etc. The data points can be seen in Fig. 5.
+  \item \textbf{Stack Ensemble}
+Ensemble machine learning methods use multiple learning algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algorithms. Many of the popular modern machine learning algorithms are actually ensembles. For example, Random Forest and Gradient Boosting Machine (GBM) are both ensemble learners. Both bagging (e.g. Random Forest) and boosting (e.g. GBM) are methods for ensembling that take a collection of weak learners (e.g. decision tree) and form a single, strong learner.
 
 \begin{figure}[!t]
 %\centering
-\includegraphics[width=\linewidth]{tab5}
+\includegraphics[width=\linewidth]{images/tab2.png}
 % where an .eps filename suffix will be assumed under latex, 
 % and a .pdf suffix will be assumed for pdflatex; or what has been declared
 % via \DeclareGraphicsExtensions.
-\caption{3D representation of data points using PCA}
+\caption{Tree size log loss}
 %\label{fig_sim}
 \end{figure}
 
- From Fig 5, it seems like data points can be separated through a plane, which provokes the idea of using a support vector machine (SVM). SVM has high classification accuracy and has a good theoretical guarantee to over-fitting. Through selecting appropriate kernel function, it can function well even when facing problems that are not linearly separable. Since SVM is good for highly dimensional space data too, it may prove to be a good choice for prediction.
+ From the Fig. 4, 25 seems to be a good enough tree size.
+
+\begin{figure}[!t]
+%\centering
+\includegraphics[width=\linewidth]{images/tab3.png}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{Feature analysis of Deep Learning}
+%\label{fig_sim}
+\end{figure}
 
 \end{itemize}
 
@@ -130,7 +135,7 @@ So the dataset currently looks like in Fig. 3.
 
 The validation of results is done using 10-fold cross validation method which divides the dataset into 10 subsets, and the holdout method is repeated 10 times. Each time, one of the 10 subsets is used as the test set and the other 9 subsets are put together to form a training set. Then the average error across all 10 trials is computed. The advantage of this method is that it matters less how the data gets divided. Every data point gets to be in a test set exactly once and gets to be in a training set 9 times. In every method, a confusion matrix is created 10 times for each fold. The accuracy in each of the confusion matrix is recorded and the average is considered. This method of validation is propagated across all the methods used.
 
-Since the objective of this analysis is to compare team versus star player gameplay behavior and observe winning 10-fold validation for star player data set needs to be done as well. Every aspect of the process remains the same as above just the data set and model for prediction is changed.
+Since the objective of this analysis is to  know important features and accuracy the table for the comparison of features in different algorithm is mentioned below. 
 A detailed team versus star player result in is shown in table 1.
 
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
@@ -139,34 +144,47 @@ A detailed team versus star player result in is shown in table 1.
   \caption{Comparison of all the models used}
     \begin{tabular}{|l|r|r|}
     \toprule
-    Model & \multicolumn{1}{l|}{mean F1 score TEAM} & \multicolumn{1}{l|}{mean F1 score STAR} \\
+    Model & \multicolumn{1}{l|}{Accuracy}  \\
     \midrule
-    LDA   & 0.772 & 0.748 \\
+    Deep Learning   & ~0.71 \\
     \midrule
-    QDA   & 0.771 & 0.741 \\
-    \midrule
-    Logistic Regression & 0.769 & 0.747 \\
-  \midrule
-    Decision Tree & 0.73  & 0.692 \\
+    Stack Ensemble (Boosting)   & ~0.73 \\
     \bottomrule
     \end{tabular}%
   \label{tab:addlabel}%
 \end{table}%
  
+The Important features
 
+    \item \texttt{ct\_eq\_val(Numeric):} The Counter Terrorist team's total equipment value (weapon + grenades + armor + utilities) after buy time.
+        Important through algorithms: Deep Learning, Gradient Boosting Machines & Naive Bayes
 
-The results suggest a higher prediction of winning for a team based gameplay in every method chosen. Team play predictors yield better accuracy in predicting win than star play predictors. Even though the difference might be close in some of the methods it still suggests that a cooperative gameplay when playing league of legends yields better accuracy. League of Legends certainly imposes competition between groups of players ("coalitions") with external enforcement of cooperative behavior by forming a team, including support players and common objective which is the requirement of a cooperative game. Considering league as a cooperative game a team will win if the payoff of a set of players is high by forming a coalition. The payoff for a player is to be determined by forming a team and having a more cooperative gameplay. The intuition of fun is also included in a cooperative gameplay; players will be more involved in the game if they have a better coalition with other players.
+     \item \texttt{t\_eq\_val(Numeric):} The Terrorist team's total equipment value (weapon + grenades + armor + utilities) after buy time.
+        Important through algorithms: Deep Learning, Gradient Boosting Machines & Naive Bayes
+
+     \item \texttt{vic\_rank(Numeric):} The new rank of the victim after the match is complete. Both \texttt{att\_rank} and \texttt{vic\_rank} are constant over all damage entries for each player/match.
+        Important through algorithms: Generalized Linear Model
+
+     \item \texttt{round(Numeric):} The round that the duel took place.
+        Important through algorithms: Distributed Random Forest, Generalized Linear Model
+
+     \item \texttt{tick(Numeric):} The current tick in the demo the entry took place. A tick is represented as a state in the game, Valve's competitive matchmaking sets every match at 64 ticks which represents that there are 64 states within each second of the game.
+        Important through algorithms: Distributed Random Forest
+
+     \item \texttt{att\_rank(Numeric):} The new rank of the attacking player after the match is complete.
+        Important through algorithms: Generalized Linear Model
 
 \section{Conclusion}
 
+The features are important because the objective is to have players stay in servers as long as possible. They're important in deciding which players need to be employed to the other team. On completion of the maps win/loss prediction would be essential in forming the next batch of teams. 
 
-A deeper analysis can be made for team versus star players if champion roles are factored in along with player activities at different moments in the match. Currently, Riot's API only allows to collect data only after the match is finished, it would be interesting to research player activities during the game. Clustering approach doesn’t work as good maybe the columns used to form clusters are not sufficient. We are making clusters of all the players based on their assist measures like “assists”, “firstInhibitorAssist”, “firstTowerAssist”, etc. most of which are discrete and shrinks the dimensions of the clusters. We need more factors that constitute to a player being involved in the cooperative approach. Either from the IPA provided by Riot of forming a measure based on the given dataset. If we can cluster people who are good at cooperative gameplay together we can predict which type of players win better. Riot’s internal mechanism of teaming players may already take this factor into consideration which means that players may be teamed based on their style of gameplay. 
+Deep Learning had the best analysis was done by the deep learning model it emphasized the particular biases in winning or losing based on maps. Mirage, \texttt{de\_cache} and \texttt{de\_dust2} were among the chief factors for people winning or loosing matches as several of the advanced player had experience playing those maps.
 
-\section*{Acknowledgment}
+Another factor was 'Force Buy' in round Types, in CSGO when you lose a round you often don't have enough money to buy weapons and equipment. you will buy pistols then and go in an eco-round. a force buy is an eco-round where you have to buy because it's for example the last round in the half.
 
+For Accuracy calculations and straight predictions of win/loss without feature importance the best algorithm would be Stack - Ensemble it has an accuracy of ~0.73. We don't wanna have a high accuracy model because if we're certain which team is going to win it's going to make the matches less interesting.
 
-The authors would like to thank...
-
+The data set also contained lots of data on map locations and bomb analysis. This paper did not delve into that consideration. Further more valve may have employed certain algorithm to perform matchmaking already which may affect this analysis.
 
 \medskip
  
