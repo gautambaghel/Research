@@ -1,0 +1,103 @@
+\hypertarget {toc}{}
+\global \c@tocdepth 1\relax 
+\contentsline {section}{\numberline {I}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {II}Concept Definitions}{1}{section.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Locomotion}{1}{subsection.2.1}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Controls}{1}{subsection.2.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-C}}Interaction}{1}{subsection.2.3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-D}}Visualization}{2}{subsection.2.4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-E}}Social Aspects}{2}{subsection.2.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-F}}Comfort}{2}{subsection.2.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-G}}Immersion}{2}{subsection.2.7}
+\contentsline {section}{\numberline {III}Virtual Reality System}{2}{section.3}
+\contentsline {section}{\numberline {IV}Overview of Games}{3}{section.4}
+\contentsline {section}{\numberline {V}Lucky$'$s Tale}{3}{section.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}Locomotion}{3}{subsection.5.1}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-B}}Controls}{3}{subsection.5.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-C}}Interaction}{3}{subsection.5.3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-D}}Visualization}{3}{subsection.5.4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-E}}Social Aspects}{3}{subsection.5.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-F}}Comfort}{4}{subsection.5.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-G}}Immersion}{4}{subsection.5.7}
+\contentsline {section}{\numberline {VI}Google Earth VR}{4}{section.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-A}}Locomotion}{4}{subsection.6.1}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-B}}Controls}{4}{subsection.6.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-C}}Interaction}{4}{subsection.6.3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-D}}Visualization}{5}{subsection.6.4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-E}}Social Aspects}{5}{subsection.6.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-F}}Comfort}{5}{subsection.6.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-G}}Immersion}{5}{subsection.6.7}
+\contentsline {section}{\numberline {VII}Destinations}{5}{section.7}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VII-A}}Locomotion}{5}{subsection.7.1}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VII-B}}Controls}{5}{subsection.7.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VII-C}}Interaction}{5}{subsection.7.3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VII-D}}Visualization}{5}{subsection.7.4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VII-E}}Social Aspects}{5}{subsection.7.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VII-F}}Comfort}{6}{subsection.7.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VII-G}}Immersion}{6}{subsection.7.7}
+\contentsline {section}{\numberline {VIII}Climbey}{6}{section.8}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VIII-A}}Locomotion}{6}{subsection.8.1}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VIII-B}}Controls}{6}{subsection.8.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VIII-C}}Interaction}{6}{subsection.8.3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VIII-D}}Visualization}{6}{subsection.8.4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VIII-E}}Social Aspects}{6}{subsection.8.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VIII-F}}Comfort}{6}{subsection.8.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VIII-G}}Immersion}{6}{subsection.8.7}
+\contentsline {section}{\numberline {IX}TheWaveVR}{6}{section.9}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IX-A}}Locomotion}{6}{subsection.9.1}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IX-B}}Controls}{7}{subsection.9.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IX-C}}Interaction}{7}{subsection.9.3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IX-D}}Visualization}{7}{subsection.9.4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IX-E}}Social Aspects}{7}{subsection.9.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IX-F}}Comfort}{7}{subsection.9.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IX-G}}Immersion}{7}{subsection.9.7}
+\contentsline {section}{\numberline {X}Rec Room}{7}{section.10}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {X-A}}Locomotion}{7}{subsection.10.1}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {X-B}}Controls}{7}{subsection.10.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {X-C}}Interaction}{7}{subsection.10.3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {X-D}}Visualization}{7}{subsection.10.4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {X-E}}Social Aspects}{8}{subsection.10.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {X-F}}Comfort}{8}{subsection.10.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {X-G}}Immersion}{8}{subsection.10.7}
+\contentsline {section}{\numberline {XI}Rick and Morty: Virtual Rick-ality}{8}{section.11}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XI-A}}Locomotion}{8}{subsection.11.1}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XI-B}}Controls}{8}{subsection.11.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XI-C}}Interaction}{8}{subsection.11.3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XI-D}}Visualization}{8}{subsection.11.4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XI-E}}Social Aspects}{8}{subsection.11.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XI-F}}Comfort}{8}{subsection.11.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XI-G}}Immersion}{8}{subsection.11.7}
+\contentsline {section}{\numberline {XII}Vivecraft}{8}{section.12}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XII-A}}Locomotion}{9}{subsection.12.1}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XII-B}}Controls}{9}{subsection.12.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XII-C}}Interaction}{9}{subsection.12.3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XII-D}}Visualization}{9}{subsection.12.4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XII-E}}Social Aspects}{9}{subsection.12.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XII-F}}Comfort}{9}{subsection.12.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XII-G}}Immersion}{9}{subsection.12.7}
+\contentsline {section}{\numberline {XIII}Super Mario HD (Own Implementation)}{9}{section.13}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIII-A}}Locomotion}{10}{subsection.13.1}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIII-B}}Controls}{10}{subsection.13.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIII-C}}Interaction}{10}{subsection.13.3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIII-D}}Visualization}{10}{subsection.13.4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIII-E}}Social Aspects}{10}{subsection.13.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIII-F}}Comfort}{10}{subsection.13.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIII-G}}Immersion}{10}{subsection.13.7}
+\contentsline {section}{\numberline {XIV}FreeSpace 2 (Own Implementation)}{10}{section.14}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIV-A}}Locomotion}{10}{subsection.14.1}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIV-B}}Controls}{10}{subsection.14.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIV-C}}Interaction}{10}{subsection.14.3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIV-D}}Visualization}{10}{subsection.14.4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIV-E}}Social Aspects}{10}{subsection.14.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIV-F}}Comfort}{11}{subsection.14.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XIV-G}}Immersion}{11}{subsection.14.7}
+\contentsline {section}{\numberline {XV}Quake (Own Implementation)}{11}{section.15}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XV-A}}Locomotion}{11}{subsection.15.1}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XV-B}}Controls}{11}{subsection.15.2}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XV-C}}Interaction}{11}{subsection.15.3}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XV-D}}Visualization}{11}{subsection.15.4}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XV-E}}Social Aspects}{11}{subsection.15.5}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XV-F}}Comfort}{11}{subsection.15.6}
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {XV-G}}Immersion}{11}{subsection.15.7}
+\contentsline {section}{\numberline {XVI}Summary}{11}{section.16}
+\contentsline {section}{References}{12}{section*.2}

@@ -1,0 +1,116 @@
+
+ OBJECTIVES:
+ 
+ 1. what the paper did
+  
+ 2. what was the contribution of the paper
+ 
+ 3. what did they use
+  
+ 4. what was their goal
+ 
+ 5. how is it related to the subject of this paper
+ 
+ 6. what was the issues with the approach
+ 
+ 
+  PAPER 1: Classification of Player Roles in the Team-based Multi-player Game Dota 2 
+           (Eggert, Christoph, Marc Herrlich, Jan Smeddinck, and Rainer Malaka, ‘Classification of Player Roles in the Team-Based Multi-Player Game Dota 2’, Lecture Notes in Computer Science (Including Subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics), 9353 (2015), 112–25 <https://doi.org/10.1007/978-3-319-24589-8_9>)
+  
+  1. Classified players into set of classes and segements of games with respect to time (early late) and support items/ damage types
+
+  2. Reduced set of classes have better accuracy for prediction  
+ 
+  3. LR, Random forest , SMO, Bayesian networks ,Naive bayes
+  
+  4. Division based on class/roles yeilds better accuracy for prediction 
+
+  5. Team-based approach to MOBA is similar but on aspects divided on roles. 
+  
+  6. Predifining roles in the game may lead to some early misdirection
+  
+  
+  PAPER 2: Expertise, Extraversion and Group Interaction Styles as Performance Indicators in Virtual Teams 
+          (Balthazard, Pierre, Richard E. Potter, and John Warren, ‘Expertise, Extraversion and Group Interaction Styles as Performance Indicators in Virtual Teams’, ACM SIGMIS Database, 35 (2004), 41 <https://doi.org/10.1145/968464.968469>)
+  
+  1. Hypothesised 3 different extraversion and success in group tasks. This study investigates how a personality trait and
+     expertise affect virtual teams interaction.
+ 
+  2. there has to be adequate knowledge within the team and a willingness to share and build
+     upon that knowledge base toward synergistic solutions that are superior to those of the best individual within a virtual team
+	 
+  3. correlation analysis, regression analysis, and a series of post hoc t-tests
+  
+  4. The foregoing hypotheses address the mechanisms through which personal characteristics of individuals
+     are aggregated via group-level dynamics to produce group-level outcomes. 
+	 
+  5. Approach to team v/s individual based on personality traits.
+   
+  6. Personalities vary , preliminary ,they were formed into interdependent teams for only the relatively brief duration of our task.
+  
+  
+  PAPER 3: Learning Dota 2 Team Compositions 
+          (Agarwala, Atish, and Michael Pearce, ‘Learning Dota 2 Team Compositions’, 2014, 2–6 <http://cs229.stanford.edu/proj2014/Atish Agarwala, Michael Pearce, Learning Dota 2 Team Compositions.pdf>)
+  
+  1. Used several method to predict winning using different team composition
+  
+  2. Approach to learn team composition
+  
+  3. Second order PCA, sortted PCA, LR
+  
+  4. To know optimal team compositions
+  
+  5. Similar themes and method used but using hero composition
+  
+  6. Player skills not taken into consideration
+
+
+ PAPER 4: Performance of Machine Learning Algorithms in Predicting Game Outcome from Drafts in Dota 2 
+          (Semenov, Aleksandr, Peter Romov, Sergey Korolev, Daniil Yashkov, and Kirill Neklyudov, ‘Performance of Machine Learning Algorithms in Predicting Game Outcome from Drafts in Dota 2’, 1–12)
+
+  1. In this paper we suggest the rst systematic review and compare performance of most frequently used machine learning algorithms
+     for prediction of the match winner from the teams' drafts in DotA 2 computer game
+
+  2. mining and preparing of large and consistent dataset of DotA 2 matches for
+     prediction modeling tasks;
+     test the methods suggested previously on this dataset with standard perfor-
+     mance metrics;
+     introduce Factorization Machines algorithm for match outcome prediction
+     based on interactions among heroes;
+     make this dataset publicly available1;
+	 
+  3. LR , native Bayes, Decision trees
+  
+  4. To proove algorithms are effective
+  
+  5. To make sure that algorithm stay consistent with dataset and research findings are valid
+  
+  6. Only few algorithms considered, QDA LDA SVM analysis could be made
+ 
+
+ PAPER 5: On Successful Team Formation: Statistical Analysis of a Multiplayer Online Game
+         (Pobiedina, Nataliia, and Julia Neidhardt, ‘On Successful Team Formation: Statistical Analysis of a Multiplayer Online Game’, … 15th Conference on, 2013, 55–62 <https://doi.org/10.1109/CBI.2013.17>)
+
+  1. Making use of game log data, we choose a statistical approach to identify
+     factors that increase the chance of a team to win. 
+	 
+  2. a better role distribution in a team increases the chance to win a game;
+     teams with more experienced players have a higher chance to win;
+     playing with friends increases the chance to win;
+     the selection of a proper leader as well as a good matching of heroes inside a team positively influence the success.
+  
+  3. ANOVA test, Mann-Whitney-Wilcoxon-tests
+  
+  4. 2nd point again
+  
+  5. Individual Hero Selection vs Team Hero Selection with log linear analysis 
+  
+  6. Gameplay elements not considered the part of analysis. Player skills and experiences are subject to each match and 
+     changes rapidly
+  
+  
+  
+  
+  
+  
+  
